@@ -17,6 +17,11 @@ let button = $('<a>Anki</a>').click((e) => {
   chrome.runtime.sendMessage({type: "jisho_req", card: {front: kanji, back: '(' + furigana + ') ' + meaning}}, (res) => {
     // Do something?? 
   });
+}).css({
+  'margin-top': '-5px',
+  'font-size': '14px'
 })
 
-$('.concept_light-wrapper').append(button)
+$('.concept_light-wrapper').filter((i, elem) => {
+  return ! $(elem).closest('#secondary').length > 0
+}).append(button)
