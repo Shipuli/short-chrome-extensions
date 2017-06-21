@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "jisho-anki-bridge",
+  "description": "A quicker way to fill anki cards",
+  "version": "0.1.0",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "http://www.jisho.org/",
+    "https://www.ankiweb.net/"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://jisho.org/*"],
+      "js": ["jquery-3.2.1.min.js", "jisho.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://ankiweb.net/*"],
+      "js": ["anki.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
