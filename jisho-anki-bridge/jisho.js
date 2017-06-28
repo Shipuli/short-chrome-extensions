@@ -6,7 +6,7 @@ function capitalize(string) {
 let button = $('<a>Anki</a>').click((e) => {
   let wanted = $(e.target).siblings().first()
   let kanji = wanted.find('.text').html()
-  let furigana = wanted.find('.kanji-2-up')
+  let furigana = wanted.find('.kanji')
   furigana = $.map(furigana, (val, i) => {
     return val.innerHTML
   }).join('')
