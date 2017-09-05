@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "kanji-to-kodansha",
+  "description": "A quicker way to find kanji in kodansha book",
+  "version": "0.1.0",
+  "permissions": ["contextMenus", "notifications"],
+  "background": {
+    "scripts": ["index.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Kodansha",
+    "default_popup": "popup.html"
+  }
+}
