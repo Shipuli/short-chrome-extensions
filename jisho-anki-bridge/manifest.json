@@ -3,12 +3,7 @@
   "name": "jisho-anki-bridge",
   "description": "A quicker way to fill anki cards",
   "version": "0.1.0",
-  "permissions": [
-    "activeTab",
-    "tabs",
-    "http://www.jisho.org/",
-    "https://www.ankiweb.net/"
-  ],
+  "permissions": ["activeTab", "tabs", "http://www.jisho.org/", "https://www.ankiuser.net/"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
@@ -20,7 +15,7 @@
       "run_at": "document_idle"
     },
     {
-      "matches": ["https://ankiweb.net/*"],
+      "matches": ["https://ankiuser.net/*"],
       "js": ["anki.js"],
       "run_at": "document_idle"
     }
